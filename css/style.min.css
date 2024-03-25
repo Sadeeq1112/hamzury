@@ -144,7 +144,7 @@ font-size: 1em; }
     bottom: 0;
     left: 0;
     right: 0;
-    background: #333;
+    background: #333333d2;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #333399, #333);
     /* Chrome 10-25, Safari 5.1-6 */
