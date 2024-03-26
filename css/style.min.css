@@ -1,6 +1,5 @@
 /*
- * Roxy: Bootstrap template by GettTemplates.com
- * https://gettemplates.co/roxy
+
  */
 html, body {
   width: 100%;
@@ -270,6 +269,16 @@ font-size: 1em; }
   right: 0;
   z-index: 0;
   transform: scale(1) rotate(50deg); }
+
+
+.square-img {
+    display: block;
+    margin:auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
 
 @keyframes fade-in-right {
   from {
