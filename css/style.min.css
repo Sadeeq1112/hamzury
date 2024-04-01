@@ -863,6 +863,11 @@ font-size: 1em; }
 /*==================================
 =            RESPONSIVE            =
 ==================================*/
+/* Define a CSS variable for the transition */
+:root {
+  --transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
 @media (max-width: 992px) {
   #header-navbar {
     position: fixed;
@@ -872,7 +877,7 @@ font-size: 1em; }
     z-index: 11;
     background: rgba(255, 255, 255, .1);
     backdrop-filter: blur(5px);
-    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all var(--transition);
     border-radius: 10px;
     padding: 1%;
     margin-top: 5%;
@@ -885,14 +890,14 @@ font-size: 1em; }
   }
 
   .navbar-brand {
-    font-size: 2.5em;
+    font-size: 2.5rem; /* Changed from em to rem */
     color: #000;
   }
 
   .navbar-nav .nav-link {
     color: white;
-    transition: .3s ease;
-    font-size: 1.5em;
+    transition: var(--transition);
+    font-size: 1.5rem; /* Changed from em to rem */
   }
 
   .navbar-toggler {
@@ -901,7 +906,7 @@ font-size: 1em; }
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) { /* Merged the two media queries */
   .jumbotron h1 {
     font-size: 3rem; 
   }
@@ -911,23 +916,20 @@ font-size: 1em; }
   }
 
   .progress {
-    height: 30px;
-    font-size: 16px; 
+    height: 2rem; /* Changed from px to rem */
+    font-size: 1rem; /* Changed from px to rem */
   }
-}
-@media (max-width: 768px) {
+
   #row1, #row2 {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   #team .section-title {
-      font-size: 1.5em;
+    font-size: 1.5rem; /* Changed from em to rem */
   }
 
   .section-content {
-      padding-top: 40px;
-      padding-bottom: 40px; 
+    padding-top: 2.5rem; /* Changed from px to rem */
+    padding-bottom: 2.5rem; /* Changed from px to rem */
   }
 }
-
-/*=====  End of RESPONSIVE  ======*/
