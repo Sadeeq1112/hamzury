@@ -211,7 +211,6 @@
     max-height: 80vh; /* Use max-height instead of height */
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto;
     font-weight: 600;
     text-align: left;
     order: 1;
