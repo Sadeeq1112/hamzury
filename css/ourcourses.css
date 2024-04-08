@@ -195,6 +195,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-direction: row-reverse;
 }
 
 .form-card {
@@ -214,7 +215,8 @@
     font-weight: 600;
     text-align: left;
     order: 1;
-    margin-top: 50px; /* Reduce the top margin */
+    margin-top: 180px; /* Reduce the top margin */
+    margin-left: 70px;
 }
 
 .instructions h2 {
@@ -227,12 +229,11 @@
 .instructions h3 {
     font-size: 20px;
     margin-bottom: 20px;
-    text-decoration: underline;
     text-align: center;
 }
 
 .instructions p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -301,23 +302,22 @@
     }
 
     .form-instructions-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
         padding: 10px;
     }
 
     .form-card, .instructions {
         margin-left: 0;
-        margin-bottom: 20px;
         width: calc(100% - 40px);
     }
 
     .instructions {
         height: auto;
-        order: 2;
+        order: 1;
     }
 
     .form-card {
-        order: 1;
+        order: 2;
     }
 
     #multi-step-form {
@@ -325,7 +325,7 @@
         padding-top: 10px; /* Add padding to the top */
         width: 90%;
         margin: auto;
-        margin-top: 140px;
+        margin-top: 10px;
     }
 
     #multi-step-form .button-container {
@@ -358,4 +358,11 @@
     #step-4 {
         padding: 5px;
     }
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
