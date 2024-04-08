@@ -214,8 +214,9 @@
     box-sizing: border-box;
     font-weight: 600;
     text-align: left;
+    text-align: justify;
     order: 1;
-    margin-top: 180px; /* Reduce the top margin */
+    margin-top: 150px; /* Reduce the top margin */
     margin-left: 70px;
 }
 
@@ -233,7 +234,7 @@
 }
 
 .instructions p {
-    font-size: 14px;
+    font-size: 14.5px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
