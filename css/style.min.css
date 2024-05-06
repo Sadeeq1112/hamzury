@@ -2,8 +2,11 @@
 
  */
 html, body {
-  width: 100%;
+  scroll-behavior: smooth;
+  width: 100%;  
   overflow-x: hidden; }
+
+
 
 body {
   font-family: 'Lato', sans-serif;
@@ -99,6 +102,21 @@ section {
   margin-left: 20px;
 }
 
+.section-content3 {
+  padding-top: 80px;
+  padding-bottom: 80px; 
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  margin-left: -100px;
+}
+
+
+.title-wrap1, .section-sub-title{
+  text-align: center;
+  align-items: center;
+  padding-top: -10px;
+}
 
 .title-wrap, 
 .section-title {
@@ -943,5 +961,567 @@ font-size: 1em; }
   .section-content {
     padding-top: 2.5rem; /* Changed from px to rem */
     padding-bottom: 2.5rem; /* Changed from px to rem */
+  }
+}
+
+
+.logo {
+  width: 100px;  /* adjust as needed */
+  height: auto;  /* maintain aspect ratio */
+}
+.my-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.my-learn-more-btn {
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.my-learn-more-btn .my-arrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 10px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.my-jumbotron {
+  position: relative;
+  min-height: 800px;
+}
+
+.my-container.text-center h1.my-display-1,
+.my-container.text-center p.my-lead,
+.my-container.text-center a.my-learn-more-btn {
+  color: white;
+}
+
+.new-jumbotron {
+  position: relative;
+  min-height: 750px; /* adjust as needed */
+}
+
+.new-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1.5); /* black overlay with 50% opacity */
+}
+.unique-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  z-index: 1; /* layer the overlay above the image */
+}
+
+.unique-image {
+  height: 710px;
+  object-fit: cover;
+  position: relative;
+  z-index: 0; /* layer the image below the overlay */
+}
+
+
+.new-content {
+  position: relative;
+  z-index: 2; /* layer the text above the overlay */
+  color: white;
+  text-align: center;
+  padding-top: 20%; /* adjust as needed */
+}
+
+.new-button {
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.new-arrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 10px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel-caption {
+  top: 60%;
+  transform: translateY(-50%);
+}
+.carousel-caption h5 {
+  font-size: 2.7em; /* adjust as needed */
+}
+
+.carousel-caption p {
+  font-size: 1em; /* adjust as needed */
+}
+
+.fas.fa-cogs {
+  color: #007bff; /* Blue */
+}
+
+.fas.fa-hammer {
+  color: #28a745; /* Green */
+}
+
+.fas.fa-tint {
+  color: #17a2b8; /* Cyan */
+}
+
+.fas.fa-tools {
+  color: #ffc107; /* Yellow */
+}
+
+.fas.fa-clock {
+  color: #dc3545; /* Red */
+}
+
+.fas.fa-check-circle {
+  color: #6c757d; /* Gray */
+}
+
+
+.scroll-arrows {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  animation: fade 3s infinite;
+  margin-bottom: 50px;
+}
+
+.scroll-arrows i {
+  display: block;
+  margin-bottom: -10px;
+  color: #fff;
+  font-size: 24px;
+  opacity: 0.7;
+}
+
+.scroll-arrows i:nth-child(1) {
+  animation: fade 3s infinite;
+  animation-delay: 0s;
+}
+
+.scroll-arrows i:nth-child(2) {
+  animation: fade 3s infinite;
+  animation-delay: 1s;
+}
+
+.scroll-arrows i:nth-child(3) {
+  animation: fade 3s infinite;
+  animation-delay: 2s;
+}
+
+@keyframes fade {
+  0%, 33%, 100% { opacity: 1; }
+  66% { opacity: 0; }
+}
+
+#sustainability-section {
+  color: #fff;
+  padding: 100px 0;
+}
+
+.sustainability-title-wrap {
+  text-align: center;
+}
+
+.sustainability-title-wrap h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.sustainability-title-wrap h2 small {
+  font-size: 0.9em;
+}
+
+.sustainability-text {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.sustainability-readmore {
+  color: #007BFF;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.sustainability-readmore i {
+  margin-left: 10px;
+}
+
+.sustainability-pillars {
+  border-left: 1px solid #fff;
+  padding-left: 30px;
+}
+
+.sustainability-pillars-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-right: 200px; /* Adjust as needed */
+  margin-left: 40px;
+  font-size: 1.5em;
+}
+
+.sustainability-pillars-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.sustainability-pillars-list li {
+  flex: 0 0 calc(25% - 10px); /* Adjust for 4 icons per row */
+  margin-bottom: 40px;
+  margin-right: 1px;
+  margin-left: 1px;
+  font-size: 0.9em; /* Adjust to make pillars smaller */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sustainability-pillars-list li .icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 10px; /* Adjust as needed */
+  width: 40px; /* Adjust to make pillars smaller */
+  height: 40px; /* Adjust to make pillars smaller */
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out; /* Add for hover effect */
+}
+
+.sustainability-pillars-list li .icon-wrap:hover {
+  transform: scale(1.1); /* Add for hover effect */
+}
+
+.sustainability-pillars-list li i {
+  margin: 0;
+}
+
+.sustainability-pillars-list li:last-child .icon-wrap i {
+  content: "\f061"; /* Add for right-facing arrow */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.read-more-icon:hover i {
+  animation: bounce 1s;
+}
+
+.custom-header {
+  position: relative;
+  height: 100vh; /* Adjust as needed to make the image longer */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.custom-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6); /* Add an overlay */
+}
+
+.custom-header .header-content {
+  position: relative; /* Position the text above the overlay */
+  text-align: center;
+  font-size: 2em; /* Adjust as needed */
+  padding: 20px;
+}
+.pabout {
+  font-size: 0.5em;
+}
+#vision-mission {
+  padding: 60px 0;
+}
+
+#vision-mission .section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#vision-mission .vision-content,
+#vision-mission .mission-content {
+  font-size: 1em;
+  line-height: 1.6;
+}
+#executive-leadership {
+    padding: 60px 0;
+    background: #f8f9fa; /* Light gray background */
+    margin-top: -200px;
+}
+
+#executive-leadership .section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #100d5c;;
+    text-decoration: solid;
+    text-emphasis: bold;
+}
+
+#executive-leadership .leader {
+    margin-bottom: 30px;
+}
+
+#executive-leadership .leader-box {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#executive-leadership .leader-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+}
+
+#executive-leadership .leader-name {
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+#executive-leadership .leader-title {
+    font-size: 0.8ßem;
+    color: #777;
+    margin-top: -5px;
+}
+
+.pexec{
+  text-align: center;
+  margin-bottom: 70px;
+}
+.underline {
+  width: 100px;
+  height: 2px;
+  background-color: red;
+  margin: 0 auto 20px;
+}
+
+.company-history {
+  background-color: #3B3F50;
+  color: white;
+  padding: 60px 0;
+  margin-bottom: 100px;
+}
+
+.company-history .section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.company-history .underline {
+  width: 50px;
+  height: 2px;
+  background-color: red;
+  margin: 0 auto 20px;
+}
+
+.company-history p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.company-history ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.company-history ul li {
+  margin-bottom: 10px;
+}
+.history-underline {
+  width: 200px;
+  height: 2px;
+  background-color: white;
+  margin: 0 auto 20px;
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .logo {
+    width: 50px;
+  }
+
+  .my-jumbotron, .new-jumbotron {
+    min-height: 300px;
+  }
+
+  .new-content {
+    padding-top: 10%;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.5em;
+  }
+
+  .carousel-caption p {
+    font-size: 0.8em;
+  }
+
+  .sustainability-pillars-list li {
+    flex: 0 0 calc(100% - 10px); /* 1 icon per row */
+  }
+
+  .custom-header .header-content {
+    font-size: 1.5em;
+  }
+
+  .pabout {
+    font-size: 1em;
+  }
+
+  #vision-mission .section-title {
+    font-size: 1.5em;
+  }
+
+  #vision-mission .vision-content,
+  #vision-mission .mission-content {
+    font-size: 0.8em;
+  }
+
+  #executive-leadership .section-title {
+    font-size: 1.5em;
+  }
+
+  #executive-leadership .leader-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  #executive-leadership .leader-name {
+    font-size: 0.8em;
+  }
+
+  #executive-leadership .leader-title {
+    font-size: 0.7em;
+  }
+
+  .company-history .section-title {
+    font-size: 1.5em;
+  }
+
+  .company-history p {
+    font-size: 1em;
+  }
+}
+
+/* For tablet devices */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .logo {
+    width: 75px;
+  }
+
+  .my-jumbotron, .new-jumbotron {
+    min-height: 500px;
+  }
+
+  .new-content {
+    padding-top: 15%;
+  }
+
+  .carousel-caption h5 {
+    font-size: 2em;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9em;
+  }
+
+  .sustainability-pillars-list li {
+    flex: 0 0 calc(50% - 10px); /* 2 icons per row */
+  }
+
+  .custom-header .header-content {
+    font-size: 1.8em;
+  }
+
+  .pabout {
+    font-size: 1.2em;
+  }
+
+  #vision-mission .section-title {
+    font-size: 1.8em;
+  }
+
+  #vision-mission .vision-content,
+  #vision-mission .mission-content {
+    font-size: 0.9em;
+  }
+
+  #executive-leadership .section-title {
+    font-size: 1.8em;
+  }
+
+  #executive-leadership .leader-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  #executive-leadership .leader-name {
+    font-size: 0.9em;
+  }
+
+  #executive-leadership .leader-title {
+    font-size: 0.8em;
+  }
+
+  .company-history .section-title {
+    font-size: 1.8em;
+  }
+
+  .company-history p {
+    font-size: 1.1em;
   }
 }

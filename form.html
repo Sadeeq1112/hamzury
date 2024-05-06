@@ -9,6 +9,7 @@
     <meta name="description" content="Hamzury">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/hamzury1 copy.png" type="image/x-icon">
+    <base target="_top">tS
 
     <!-- External CSS -->
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
@@ -96,7 +97,7 @@
 	</div>
     </div>
     <div class="form-instructions-container">
-        <form id="multi-step-form" action="https://formspree.io/f/xkndpjvn" method="POST" enctype="multipart/form-data">
+        <form id="multi-step-form">
             <div class="progress-indicator">
                 <div class="step active-step">
                     <div class="circle">1</div>
@@ -110,126 +111,146 @@
                     <div class="circle">3</div>
                 </div>
             </div>
-    <!-- Step 1 -->
-    <div class="form-step">
-        <h2>Personal Information</h2>
-        <div>
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-        </div>
-        <div>
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="eg yournamee@example.com" autocomplete="email" required>
-        </div>
-        <div>
-            <label for="phone-number">Phone Number</label>
-            <input type="tel" id="phone-number" name="phone-number" placeholder="09130700056" autocomplete="tel-national" required>
-        </div>
-        <div>
-            <label for="interview-location">Interview Location</label>
-            <select id="interview-location" name="interview-location" required>
-                <option value="">Select </option>
-                <option value="online">Online</option>
-                <option value="online">Offline</option>
-            </select>
-        </div>
-        <div>
-            <label for="gender">Gender</label>
-            <select id="gender" name="gender" required>
-                <option value="">Select </option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <div class="button-container">
-            <button type="button" class="next-btn">Next</button>
-        </div>
-    </div>
+            <!-- Step 1 -->
+            <div class="form-step">
+                <h2>Personal Information</h2>
+                <div>
+                    <label for="first-name">First Name</label>
+                    <input class="form-data" type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                </div>
+                <div>
+                    <label for="last-name">Last Name</label>
+                    <input class="form-data" type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input class="form-data" type="email" id="email" name="email" placeholder="eg yournamee@example.com" autocomplete="email" required>
+                </div>
+                <div>
+                    <label for="phone-number">Phone Number</label>
+                    <input class="form-data" type="tel" id="phone-number" name="phone-number" placeholder="09130700056" autocomplete="tel-national" required>
+                </div>
+                <div>
+                    <label for="interview-location">Interview Location</label>
+                    <select id="interview-location" name="interview-location" required>
+                        <option value="">Select </option>
+                        <option value="online">Online</option>
+                        <option value="online">Offline</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select </option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="button-container">
+                    <!-- Call the send_data() function when the submit button is clicked -->
+                    <button type="button" class="next-btn" onclick="send_data()">Next</button>
+                </div>
+            </div>
 
-    <!-- Step 2 -->
-    <div class="form-step">
-        <h2>Education Information</h2>
-        <div>
-            <label for="school">School</label>
-            <input type="text" id="school" name="school" placeholder="University of Jos" required>
-        </div>
-        <div>
-            <label for="department">Department</label>
-            <input type="text" id="department" name="department" placeholder="Computer Science" required>
-        </div>
-        <div>
-            <label for="course-of-study">Course of Study</label>
-            <input type="text" id="course-of-study" name="course-of-study" placeholder="Software Engineering" required>
-        </div>
-        <div>
-            <label for="registration-number">Registration Number</label>
-            <input type="text" id="registration-number" name="registration-number" placeholder="2019/NS/0000" required>
-        </div>
-        <div>
-            <label for="internship-start-date">Internship Start Date</label>
-            <input type="date" id="internship-start-date" name="internship-start-date" required>
-        </div>
-        <div>
-            <label for="internship-end-date">Internship End Date</label>
-            <input type="date" id="internship-end-date" name="internship-end-date" required>
-        </div>
-        <div>
-            <label for="programming-experience">Do you have programming experience?</label>
-            <select id="programming-experience" name="programming-experience" required>
-                <option value="">Select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-        </div>
-        <div>
-            <label for="internship-duration">Allowed Internship Duration</label>
-            <select id="internship-duration" name="internship-duration" required>
-                <option value="">Select </option>
-                <option value="3 months">3 Months</option>
-                <option value="6 months">6 Months</option>
-            </select>
-        </div>
-        <div>
-            <label for="desired-track">Desired Track</label>
-            <select id="desired-track" name="desired-track" required>
-                <option value="">Select </option>
-                <option value="frontend">Frontend</option>
-                <option value="backend">Backend</option>
-                <option value="ar/vr">AR/VR</option>
-                <!-- Add more options as needed -->
-            </select>
-        </div>
-        <div class="button-container">
-            <button type="button" class="back-btn">Back</button>
-            <button type="button" class="next-btn">Next</button>
-        </div>
-    </div>
+            <!-- Step 2 -->
+            <div class="form-step">
+                <h2>Education Information</h2>
+                <div>
+                    <label for="school">School</label>
+                    <input class="form-data" type="text" id="school" name="school" placeholder="University of Jos" required>
+                </div>
+                <div>
+                    <label for="department">Department</label>
+                    <input class="form-data" type="text" id="department" name="department" placeholder="Computer Science" required>
+                </div>
+                <div>
+                    <label for="course-of-study">Course of Study</label>
+                    <input class="form-data" type="text" id="course-of-study" name="course-of-study" placeholder="Software Engineering" required>
+                </div>
+                <div>
+                    <label for="registration-number">Registration Number</label>
+                    <input class="form-data" type="text" id="registration-number" name="registration-number" placeholder="2019/NS/0000" required>
+                </div>
+                <div>
+                    <label for="internship-start-date">Internship Start Date</label>
+                    <input class="form-data" type="date" id="internship-start-date" name="internship-start-date" required>
+                </div>
+                <div>
+                    <label for="internship-end-date">Internship End Date</label>
+                    <input class="form-data" type="date" id="internship-end-date" name="internship-end-date" required>
+                </div>
+                <div>
+                    <label for="programming-experience">Do you have programming experience?</label>
+                    <select id="programming-experience" name="programming-experience" required>
+                        <option value="">Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="internship-duration">Allowed Internship Duration</label>
+                    <select id="internship-duration" name="internship-duration" required>
+                        <option value="">Select </option>
+                        <option value="3 months">3 Months</option>
+                        <option value="6 months">6 Months</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="desired-track">Desired Track</label>
+                    <select id="desired-track" name="desired-track" required>
+                        <option value="">Select </option>
+                        <option value="frontend">Frontend</option>
+                        <option value="backend">Backend</option>
+                        <option value="ar/vr">AR/VR</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="back-btn">Back</button>
+                    <!-- Call the send_data() function when the submit button is clicked -->
+                    <button type="button" class="next-btn" onclick="send_data()">Next</button>
+                </div>
+            </div>
 
-    <!-- Step 3 -->
-    <div class="form-step">
-        <h2>Upload Cover Letter</h2>
-        <div>
-            <label for="cover-letter">Cover Letter</label>
-            <input type="file" id="cover-letter" name="cover-letter" required>
-        </div>
-        <div class="button-container">
-            <button type="button" class="back-btn">Back</button>
-            <button type="submit">Submit</button>
-        </div>
-    </div>
+            <!-- Step 3 -->
+            <div class="form-step">
+                <h2>Upload Cover Letter</h2>
+                <div>
+                    <label for="cover-letter">Cover Letter</label>
+                    <input class="form-data" type="file" id="cover-letter" name="cover-letter" required>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="back-btn">Back</button>
+                    <!-- Call the send_data() function when the submit button is clicked -->
+                    <button type="button" id="finish-btn" onclick="send_data()">Finish</button>
+                </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="form-step" id="thank-you-message">
+                <i class="fas fa-check-circle fa-5x" style="color: green;"></i>
+                <h2>Thank you for submitting!</h2>
+                <p>Your response has been successfully recorded.</p>
+            </div>
+        </form>
 
-    <!-- Step 4 -->
-    <div class="form-step">
-        <i class="fas fa-check-circle fa-5x" style="color: green;"></i>
-        <h2>Thank you for submitting!</h2>
-        <p>Your response has been successfully recorded.</p>
-    </div>
-    </form>
+    <!-- Add the JavaScript code to submit the data to Google App Script -->
+    <script>
+        function send_data() {
+            function send_data(){
+    var form_data = document.getElementsByClassName("form-data"); //retrieve filled form data
+    var i;
+    var data = [];
+    for(i=0; i<form_data.length; i++){
+      data.push(form_data[i].value);
+    }
+    google.script.run.saveData(data); // send to google app script
+    document.getElementById("form").style.display = "none"; // make form invisible
+    document.getElementById("completion-msg").style.display = "block"; // Optional if you want to give a completion feedback!
+  }
+            // Your code to submit the data to Google App Script goes here
+        }
+    </script>
                 <div class="instructions">
                     <h2>Guidelines</h2>
                     <h3>Important Information Before You Begin!!</h3>
