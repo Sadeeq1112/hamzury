@@ -1525,3 +1525,12 @@ font-size: 1em; }
     font-size: 1.1em;
   }
 }
+
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}

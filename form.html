@@ -97,7 +97,7 @@
 	</div>
     </div>
     <div class="form-instructions-container">
-        <form id="multi-step-form">
+        <form action="submit_form.php" method="post" id="multi-step-form">
             <div class="progress-indicator">
                 <div class="step active-step">
                     <div class="circle">1</div>
@@ -218,12 +218,12 @@
                 <h2>Upload Cover Letter</h2>
                 <div>
                     <label for="cover-letter">Cover Letter</label>
-                    <input class="form-data" type="file" id="cover-letter" name="cover-letter" required>
+                    <input class="form-data" type="file" id="cover-letter" name="file" required>
                 </div>
                 <div class="button-container">
                     <button type="button" class="back-btn">Back</button>
                     <!-- Call the send_data() function when the submit button is clicked -->
-                    <button type="button" id="finish-btn" onclick="send_data()">Finish</button>
+                    <button type="button" onclick="submitForm()">Submit</button>
                 </div>
             </div>
             <!-- Step 4 -->
