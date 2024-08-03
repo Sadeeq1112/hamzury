@@ -11,9 +11,9 @@ function log_message($message) {
 
 // Database connection details
 $servername = "localhost";
-$username = "sadeeq";
+$username = "hamzuryc_admin";
 $password = "09030037973Ab,";
-$dbname = "sadeeq";
+$dbname = "hamzuryc_sadeeq";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
