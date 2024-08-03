@@ -43,9 +43,6 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     }
 }
 
-// Rest of your admin_view.php code goes here
-
-
 // Database connection details
 $servername = "localhost";
 $username = "hamzuryc_admin";
@@ -79,8 +76,31 @@ function export_csv($data) {
     exit();
 }
 
+// Handle delete action
+if (isset($_POST['delete']) && isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $delete_sql = "DELETE FROM students WHERE id = ?";
+    $stmt = $conn->prepare($delete_sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->close();
+}
+
+// Handle search and filter
+$where_clause = "";
+$search = isset($_GET['search']) ? $_GET['search'] : '';
+$filter_age = isset($_GET['filter_age']) ? $_GET['filter_age'] : '';
+
+if (!empty($search)) {
+    $where_clause .= " WHERE full_name LIKE '%$search%' OR phone LIKE '%$search%'";
+}
+
+if (!empty($filter_age)) {
+    $where_clause .= (empty($where_clause) ? " WHERE" : " AND") . " age = $filter_age";
+}
+
 // Fetch data from database
-$sql = "SELECT * FROM students";
+$sql = "SELECT * FROM students" . $where_clause;
 $result = $conn->query($sql);
 
 $data = array();
@@ -113,12 +133,13 @@ $conn->close();
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: auto;
             background: white;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow-x: auto;
         }
         h2 {
             text-align: center;
@@ -133,6 +154,7 @@ $conn->close();
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+            white-space: nowrap;
         }
         th {
             background-color: #f2f2f2;
@@ -141,10 +163,8 @@ $conn->close();
         tr:hover {
             background-color: #f5f5f5;
         }
-        .export-btn {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
+        .export-btn, .delete-btn {
+            display: inline-block;
             padding: 10px;
             background-color: #4CAF50;
             color: white;
@@ -153,17 +173,40 @@ $conn->close();
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin: 5px;
         }
-        .export-btn:hover {
-            background-color: #45a049;
+        .delete-btn {
+            background-color: #f44336;
+        }
+        .export-btn:hover, .delete-btn:hover {
+            opacity: 0.8;
+        }
+        .search-filter {
+            margin-bottom: 20px;
+        }
+        .search-filter input, .search-filter select {
+            padding: 5px;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Student Data - Admin </h2>
-        <form method="post">
+        <h2>Student Data - Admin View</h2>
+        <form method="post" style="display: inline;">
             <input type="submit" name="export" value="Export to CSV" class="export-btn">
+        </form>
+        <form method="get" class="search-filter">
+            <input type="text" name="search" placeholder="Search by name or phone" value="<?php echo htmlspecialchars($search); ?>">
+            <select name="filter_age">
+                <option value="">All Ages</option>
+                <?php
+                for ($i = 18; $i <= 60; $i++) {
+                    echo "<option value=\"$i\"" . ($filter_age == $i ? " selected" : "") . ">$i</option>";
+                }
+                ?>
+            </select>
+            <input type="submit" value="Search & Filter" class="export-btn">
         </form>
         <table>
             <tr>
@@ -178,6 +221,7 @@ $conn->close();
                 <th>Guarantor Address</th>
                 <th>Relationship</th>
                 <th>Registration Date</th>
+                <th>Action</th>
             </tr>
             <?php foreach ($data as $row): ?>
             <tr>
@@ -192,6 +236,12 @@ $conn->close();
                 <td><?php echo htmlspecialchars($row['guarantor_address']); ?></td>
                 <td><?php echo htmlspecialchars($row['relationship']); ?></td>
                 <td><?php echo htmlspecialchars($row['registration_date']); ?></td>
+                <td>
+                    <form method="post" onsubmit="return confirm('Are you sure you want to delete this record?');">
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                        <input type="submit" name="delete" value="Delete" class="delete-btn">
+                    </form>
+                </td>
             </tr>
             <?php endforeach; ?>
         </table>
