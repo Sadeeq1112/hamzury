@@ -398,8 +398,8 @@
                     if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
                         age--;
                     }
-                    if(age < 16 || age > 100) {
-                        showError(errorElement, 'Age must be between 16 and 100');
+                    if(age < 11 || age > 19) {
+                        showError(errorElement, 'Age must be between 11 and 19');
                         return false;
                     }
                     $('#age').val(age); // Update the age field
