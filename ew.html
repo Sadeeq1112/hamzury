@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Operating Agreement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .left-panel {
+            background-color: #0052cc;
+            color: white;
+            padding: 2rem;
+            width: 40%;
+        }
+        .right-panel {
+            background-color: #ffffff;
+            padding: 2rem;
+            width: 60%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        button {
+            background-color: #0052cc;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-panel">
+        <h1>Let's setup your Operating Agreement</h1>
+        <p>All-in-one solution for your business in the state. Form a new company from scratch or onboard your existing US company.</p>
+        <div class="testimonial">
+            <p>"I barely had to do anything"</p>
+            <p>Love the experience. Got my business set up and all necessary details in about a month and I barely had to do anything. Definitely recommend!</p>
+            <p>Jane Doe</p>
+        </div>
+    </div>
+    <div class="right-panel">
+        <h2>Let's get started</h2>
+        <form>
+            <div class="form-row">
+                <input type="text" placeholder="First name" required>
+                <input type="text" placeholder="Last name" required>
+            </div>
+            <input type="email" placeholder="Email" required>
+            <div class="form-row">
+                <select required>
+                    <option value="">Country of residence</option>
+                    <option value="US">United States</option>
+                </select>
+                <select required>
+                    <option value="">State</option>
+                    <option value="DE">Delaware</option>
+                </select>
+            </div>
+            <input type="tel" placeholder="Phone number" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">GET STARTED</button>
+        </form>
+    </div>
+</body>
+</html>

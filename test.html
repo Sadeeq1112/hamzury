@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your account - Hamzury Holiday Tech Boot Camp</title>
+    <style>
+        body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background-color: #f6f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1040px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.sidebar {
+    width: 350px;
+    padding: 40px;
+    background-color: #0050ff;
+    color: white;
+}
+.logo img {
+    width: 120px;
+    margin-bottom: 50px;
+}
+.feature-heading {
+    font-size: 26px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.feature-description {
+    font-size: 12px;
+    line-height: 1.5;
+}
+.testimonial {
+    background-color: rgb(0, 63, 218);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+.testimonial-text {
+    margin-bottom: 10px;
+}
+.testimonial-author {
+    font-weight: bold;
+}
+.form-container {
+    flex-grow: 1;
+    padding: 40px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #333;
+}
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.progress-step {
+    flex-grow: 1;
+    height: 4px;
+    background-color: #e0e0e0;
+    margin: 0 2px;
+}
+.progress-step.active {
+    background-color: #0050ff;
+}
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+.form-group {
+    flex: 1;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.phone-input {
+    display: flex;
+}
+.phone-input select {
+    width: 80px;
+    margin-right: 10px;
+}
+.phone-input input {
+    flex-grow: 1;
+}
+button {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+    background-color: #0050ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0040cc;
+}
+.footer {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #6b7c93;
+    text-align: center;
+}
+.footer a {
+    color: #0050ff;
+    text-decoration: none;
+}
+.step {
+    display: none;
+}
+.step.active {
+    display: block;
+}
+.error-message {
+            color: #ff0000;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        input.error, select.error {
+            border-color: #ff0000;
+        }
+@media (max-width: 768px) {
+body {
+height: auto;
+padding: 20px 0;
+}
+
+.container {
+flex-direction: column;
+margin-top: 0;
+max-width: 100%;
+box-shadow: none;
+}
+
+.sidebar {
+width: 100%;
+padding: 20px;
+border-radius: 10px 10px 0 0;
+}
+
+.logo img {
+width: 100px;
+margin-bottom: 30px;
+}
+
+.feature-heading {
+font-size: 22px;
+}
+
+.form-container {
+padding: 20px;
+}
+
+.form-row {
+flex-direction: column;
+gap: 0;
+}
+
+.form-group {
+width: 100%;
+}
+
+input, select {
+font-size: 14px;
+}
+
+.phone-input {
+flex-direction: column;
+}
+
+.phone-input select {
+width: 100%;
+margin-right: 0;
+margin-bottom: 10px;
+}
+
+button {
+font-size: 14px;
+}
+}
+
+@media (max-width: 480px) {
+.container {
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.sidebar {
+padding: 15px;
+}
+
+.form-container {
+padding: 15px;
+}
+
+h2 {
+font-size: 20px;
+}
+
+.feature-heading {
+font-size: 20px;
+}
+
+.feature-description {
+font-size: 10px;
+}
+
+.testimonial {
+padding: 15px;
+}
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dtqzcsq0i/image/upload/v1711355987/Hamzury_New_Logo_png_exvptw.png" alt="Hamzury Logo">
+            </div>
+            <h2 class="feature-heading">
+                Hamzury<br>
+                Holiday Tech<br>
+                Bootcamp
+            </h2>
+            <p class="feature-description">
+               Keep yourself and your ward engaged during the holidays with our holiday tech bootcamp with a wide range of courses to choose from and experienced tutors.
+            </p>
+            <div class="testimonial">
+                <p class="testimonial-text">I barely had to do anything. Love the experience. Got my business set up and all necessary details in about a month and I barely had to do anything. Definitely recommend!</p>
+                <p class="testimonial-author">Catherine Johns</p>
+            </div>
+        </div>
+        <div class="form-container">
+            <form id="registrationForm">
+                <div class="progress-bar">
+                    <div class="progress-step active"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                </div>
+                <div class="step active" id="step1">
+                    <h2>Let's get started</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message"></div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="State">State of Residence</label>
+                            <select id="State" name="State" required>
+                                <option disabled selected>--Select State--</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Adamawa">Adamawa</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Anambra">Anambra</option>
+                                <option value="Bauchi">Bauchi</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Benue">Benue</option>
+                                <option value="Borno">Borno</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Ekiti">Ekiti</option>
+                                <option value="Enugu">Enugu</option>
+                                <option value="FCT">Federal Capital Territory</option>
+                                <option value="Gombe">Gombe</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Jigawa">Jigawa</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Katsina">Katsina</option>
+                                <option value="Kebbi">Kebbi</option>
+                                <option value="Kogi">Kogi</option>
+                                <option value="Kwara">Kwara</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Nasarawa">Nasarawa</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Ogun">Ogun</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Osun">Osun</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Plateau">Plateau</option>
+                                <option value="Rivers">Rivers</option>
+                                <option value="Sokoto">Sokoto</option>
+                                <option value="Taraba">Taraba</option>
+                                <option value="Yobe">Yobe</option>
+                                <option value="Zamfara">Zamfara</option>
+                            </select>
+                            <div class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="City">City</label>
+                            <input list="City" id="City" name="City" required>
+                            <datalist id="City">
+                                <option value="Abakaliki">
+                                <option value="Aba">
+                                <option value="Abeokuta">
+                                <option value="Abuja">
+                                <option value="Ado Ekiti">
+                                <option value="Akure">
+                                <option value="Asaba">
+                                <option value="Awka">
+                                <option value="Bauchi">
+                                <option value="Benin City">
+                                <option value="Birnin Kebbi">
+                                <option value="Calabar">
+                                <option value="Damaturu">
+                                <option value="Dutse">
+                                <option value="Eket">
+                                <option value="Enugu">
+                                <option value="Gombe">
+                                <option value="Gusau">
+                                <option value="Ibadan">
+                                <option value="Ife">
+                                <option value="Ikeja">
+                                <option value="Ikot Ekpene">
+                                <option value="Ikot Abasi">
+                                <option value="Ilorin">
+                                <option value="Jalingo">
+                                <option value="Jos">
+                                <option value="Kaduna">
+                                <option value="Kano">
+                                <option value="Katsina">
+                                <option value="Kontagora">
+                                <option value="Lafia">
+                                <option value="Lagos">
+                                <option value="Lokoja">
+                                <option value="Maiduguri">
+                                <option value="Makurdi">
+                                <option value="Minna">
+                                <option value="Ogoja">
+                                <option value="Okitipupa">
+                                <option value="Omu-Aran">
+                                <option value="Onitsha">
+                                <option value="Oron">
+                                <option value="Oshogbo">
+                                <option value="Owerri">
+                                <option value="Owo">
+                                <option value="Oyo">
+                                <option value="Port Harcourt">
+                                <option value="Potiskum">
+                                <option value="Sokoto">
+                                <option value="Suleja">
+                                <option value="Umuahia">
+                                <option value="Uyo">
+                                <option value="Warri">
+                                <option value="Yenagoa">
+                                <option value="Yola">
+                                <option value="Zaria">
+                            </datalist>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+                    <label for="phone">Phone number</label>
+                    <div class="phone-input">
+                        <select id="phoneCountry" disabled>
+                            <option value="+234">+234</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="error-message"></div>
+                    
+                    <button type="button" onclick="nextStep(2)">Next</button>
+                </div>
+
+<div class="step" id="step2">
+    <h2>Additional Information</h2>
+    
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+        <option value="" disabled selected>Select gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+    <div class="error-message"></div>
+    
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" required>
+    <div class="error-message"></div>
+    
+    <label for="guardianName">Parent/Guardian Name</label>
+    <input type="text" id="guardianName" name="guardianName" required>
+    <div class="error-message"></div>
+    
+    <label for="schoolName">School Name</label>
+    <input type="text" id="schoolName" name="schoolName" required>
+    <div class="error-message"></div>
+    
+    <button type="button" onclick="prevStep(1)">Previous</button>
+    <button type="button" onclick="nextStep(3)">Next</button>
+</div>
+
+<!-- Step 3 -->
+<div class="step" id="step3">
+    <h2>Payment</h2>
+    <p>Please click the button below to make your payment using Paystack:</p>
+    <button type="button" class="paystack-button" onclick="initializePayment()">Pay with Paystack</button>
+    <button type="button" onclick="prevStep(2)">Previous</button>
+</div>
+
+<!-- Step 4 -->
+<div class="step" id="step4">
+    <h2>Thank You!</h2>
+    <p>Thank you for making this payment. You will find your receipt in your email.</p>
+    <p>We look forward to seeing you at the Hamzury Holiday Tech Boot Camp!</p>
+</div>
+</form>
+</div>
+</div>
+                    
+            
+
+    <script>
+       $(document).ready(function() {
+            const form = $("#registrationForm");
+            const validator = form.validate({
+                rules: {
+                    firstName: "required",
+                    lastName: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    State: "required",
+                    City: "required",
+                    phone: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 15
+                    },
+                    gender: "required",
+                    dob: "required",
+                    guardianName: "required",
+                    schoolName: "required"
+                },
+                messages: {
+                    firstName: "Please enter your first name",
+                    lastName: "Please enter your last name",
+                    email: {
+                        required: "Please enter your email address",
+                        email: "Please enter a valid email address"
+                    },
+                    State: "Please select your state of residence",
+                    City: "Please enter your city",
+                    phone: {
+                        required: "Please enter your phone number",
+                        minlength: "Phone number must be at least 10 digits",
+                        maxlength: "Phone number must not exceed 15 digits"
+                    },
+                    gender: "Please select your gender",
+                    dob: "Please enter your date of birth",
+                    guardianName: "Please enter your parent/guardian name",
+                    schoolName: "Please enter your school name"
+                },
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.siblings(".error-message"));
+                },
+                highlight: function(element) {
+                    $(element).addClass("error");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("error");
+                }
+            });
+
+            // Real-time validation
+            form.find("input, select").on("blur keyup change", function() {
+                $(this).valid();
+            });
+        });
+
+        function nextStep(step) {
+            const currentStep = $(".step.active");
+            const nextStep = $(`#step${step}`);
+            
+            if ($("#registrationForm").valid()) {
+                currentStep.removeClass("active");
+                nextStep.addClass("active");
+                updateProgressBar(step);
+            }
+        }
+
+        function prevStep(step) {
+            const currentStep = $(".step.active");
+            const prevStep = $(`#step${step}`);
+            
+            currentStep.removeClass("active");
+            prevStep.addClass("active");
+            updateProgressBar(step);
+        }
+
+        function updateProgressBar(step) {
+            $(".progress-step").removeClass("active");
+            $(".progress-step").slice(0, step).addClass("active");
+        }
+        
+        function initializePayment() {
+            // Here you would normally integrate with Paystack's API
+            // For demonstration purposes, we'll just move to the next step
+            alert("Paystack integration would happen here. Moving to the next step for demonstration.");
+            nextStep(4);
+        }
+    </script>
+</body>
+</html>
