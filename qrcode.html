@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable QR Code Certificate Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #qrcode, #imagePreview { margin-top: 20px; }
+        #imagePreview img { max-width: 100%; height: auto; }
+        #certificateList { margin-top: 20px; }
+        .certificate-item { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Editable QR Code Certificate Generator</h1>
+    
+    <input type="text" id="imageUrl" placeholder="Enter image URL">
+    <button onclick="generateQR()">Generate QR Code</button>
+    
+    <div id="qrcode"></div>
+    <div id="imagePreview"></div>
+
+    <h2>Existing Certificates</h2>
+    <div id="certificateList"></div>
+
+    <script>
+        // This would normally be handled server-side. For demo purposes, we're using localStorage.
+        let certificates = JSON.parse(localStorage.getItem('certificates')) || {};
+
+        function generateQR() {
+            const imageUrl = document.getElementById('imageUrl').value;
+            if (!imageUrl) {
+                alert('Please enter an image URL.');
+                return;
+            }
+
+            const id = Date.now().toString(); // Generate a unique ID
+            certificates[id] = imageUrl;
+            localStorage.setItem('certificates', JSON.stringify(certificates));
+
+            // Generate QR code
+            const qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: `${window.location.href}?id=${id}`,
+                width: 256,
+                height: 256
+            });
+
+            // Display image preview
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.innerHTML = `<img src="${imageUrl}" alt="Certificate Preview">`;
+
+            updateCertificateList();
+        }
+
+        function updateCertificateList() {
+            const list = document.getElementById('certificateList');
+            list.innerHTML = '';
+            for (let id in certificates) {
+                list.innerHTML += `
+                    <div class="certificate-item">
+                        <input type="text" value="${certificates[id]}" id="url-${id}">
+                        <button onclick="updateCertificate('${id}')">Update</button>
+                        <button onclick="deleteCertificate('${id}')">Delete</button>
+                    </div>
+                `;
+            }
+        }
+
+        function updateCertificate(id) {
+            const newUrl = document.getElementById(`url-${id}`).value;
+            certificates[id] = newUrl;
+            localStorage.setItem('certificates', JSON.stringify(certificates));
+            alert('Certificate updated!');
+        }
+
+        function deleteCertificate(id) {
+            delete certificates[id];
+            localStorage.setItem('certificates', JSON.stringify(certificates));
+            updateCertificateList();
+        }
+
+        // Check if we're viewing a certificate
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        if (id) {
+            const certificateUrl = certificates[id];
+            if (certificateUrl) {
+                document.body.innerHTML = `<img src="${certificateUrl}" alt="Certificate">`;
+            } else {
+                document.body.innerHTML = '<p>Certificate not found.</p>';
+            }
+        } else {
+            updateCertificateList();
+        }
+    </script>
+</body>
+</html>
